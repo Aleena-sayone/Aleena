@@ -1,0 +1,13 @@
+@media screen and (max-width: 180px) {
+    body {
+      background-color: white;
+    }
+  }
+  .top-nav-collapse, .page-footer {
+    background-color: black !important;
+}
+body {
+  max-width: 100% ;
+  margin-top: 0px ;
+  background: black;
+}
