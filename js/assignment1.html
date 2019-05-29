@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DEmonstrating Form validation using js</title>
+        <style>
+            .mytextbox{
+            
+            padding: 0;
+            height: 30px;
+            width: 800px;
+            position: relative;
+            left: 0;
+            outline: none;
+            border: 1px solid #cdcdcd;
+            border-color: rgba(0, 0, 0, .15);
+            background-color: white;
+            font-size: 16px;            
+        }        
+        </style>
+    </head>
+    <body>
+        <center>
+        <div>
+        <form method="POST" style="border:1;border-color: black;">
+            <h1>User Registration</h1>
+            <input type="text" class="mytextbox" name="name" id="name" placeholder="  Name" required><br/><br/>
+            <input type="text" class="mytextbox" name="email" id="email" placeholder="    email id " required><br/><br/>
+            <input type="number" class="mytextbox" name="age" id="age" placeholder="  age" required><br/><br/>
+            <input type="text" class="mytextbox" name="phone" id ="phone" placeholder="   contact Number"><br/><br/>
+            <button name="submit" class="btn btn-secondary" style="width:800px" id="submit" onclick="validation_check();">Submit</button>
+        </form>
+        </div>
+        </center>
+        <script type="text/javascript">
+        
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;       
+        var phoneno = /^\d{10}$/;
+
+        function validation_check(){
+             if (reg.test(document.getElementById('email') .value) == false){
+                alert('Invalid Email Address');
+            
+            }else if((document.getElementById('age').value < 9) || (document.getElementById('age').value > 110)){
+                alert('Invalid age ');
+                
+            }else if((document.getElementById('phone').value.length<10) || (document.getElementById('phone').value.length > 10)){
+                alert('Invalid phone number ');
+                
+            }else if(!(document.getElementById('phone').value.match(phoneno))){
+                alert("invalid phone number");
+            }else{
+                alert('SUCCESS .......!');
+                return (true);
+            }
+            
+        }
+        </script>
+    </body>
+</html>

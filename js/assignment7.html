@@ -1,0 +1,31 @@
+<style>
+        .mytextbox{
+            
+            padding: 0;
+            height: 30px;
+            width: 800px;
+            position: relative;
+            left: 0;
+            outline: none;
+            border: 1px solid #cdcdcd;
+            border-color: rgba(0, 0, 0, .15);
+            background-color: white;
+            font-size: 16px;            
+        }
+    </style>
+<div style='text-align:center;'>
+	<script type= "text/javascript" src = "countries.js"></script>
+    <br/><br/><br/>
+    <center>
+    <form style="border:gray;border-style:solid;width: 70%;">
+    <h1>Country Region Selection Form</h1>
+    <select id="country" class="mytextbox" name ="country"></select><br/><br/>
+    <span style="float:left;padding-left: 65px;">Select Region : </span><br><br/>
+      <select id="state" class="mytextbox" name="state"></select><br/><br/><br/>
+</form>
+</center>
+    </div>
+
+<script language="javascript">
+	populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down	
+</script>
