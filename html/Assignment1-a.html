@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        STUDENT REGISTERATION FORM
+    </title
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .mytextbox{
+            
+            padding: 0;
+            height: 30px;
+            width: 800px;
+            position: relative;
+            left: 0;
+            outline: none;
+            border: 1px solid #cdcdcd;
+            border-color: rgba(0, 0, 0, .15);
+            background-color: white;
+            font-size: 16px;            
+        }
+        .mytextarea{
+            width: 800px;
+            font-size: 16px; 
+            border: 1px solid #cdcdcd;
+            border-color: rgba(0, 0, 0, .15);
+        }
+        .others{
+            height: 30px;
+            border-color: rgba(0, 0, 0, .15);
+            width:450px;
+            border: 1px solid #cdcdcd
+        }     
+          
+    </style>
+</head>
+<body>
+<center><BR/><BR/>
+        <div id="form-wrapper" style="max-width:900px;margin:auto;">
+<form action="" method="POST" style="border:gray;border-style:solid;">
+    <BR/>
+    <h1>STUDENT REGISTERATION</h1>   <br/><br/> 
+    <input type="text" class ="mytextbox" name="fname" placeholder="    First Name "> <br/><br/>
+    <input type="text" class ="mytextbox" name="lname" placeholder="    Last Name "><br/><br/>
+    <textarea  name="paddress" id="paddress" class="mytextarea" rows ="3" placeholder="    Permenant Address"></textarea><br/><br/>    
+    <input type="checkbox" id="check" style="float:center;" onchange="javascript: adrs()"><b style='font-size:50px;'>&#10003;</b>Current address and PermenantAddress are same ?
+    <textarea  name="caddress" id="caddress" style="width:370px" class="mytextarea" rows ="3" placeholder="    Current Address"></textarea><br/><br/>    Date Of Birth :
+    <input type="date" class="others" style="width:500px" name="dob">
+    Gender :
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">FeMale <br/><br/> 
+    <input type="text" class="others" name="nationality" placeholder="    Nationality">
+    <input type="text" class="others" style="width:345px" name="Religion" placeholder="    Religion "><br/><br/>
+        
+    <select id ="applying_for" name="applying_for" class="others" style="width:300px" onchange="javascript: test()">
+            <option>Class you want to apply for</option>
+            <option value="1">First Standard</option>
+            <option value="5">Fifth Standard</option>            
+            <option value="11">Eleventh Standard</option>
+            <option value="other">Other</option>   
+    </select>
+    Date :
+    <input type="date" class="others" name="dob"><br/><br/>
+    <input type="text" name="std" id="std" class ="mytextbox" placeholder=" Enter Class" style="display: none;" /><br id="br1" style="display: none;"/><br id="br2" style="display: none;" />
+    
+    <input type="text" class ="mytextbox" name="prevoius_school" placeholder="  Name Of Prevoius School"><br/><br/>
+    <input type="number" class="others" style="width:340px" name="percentage" placeholder=" Percentage of Prevoius Year Exams ">  
+    Blood Group : 
+    <select name="blood_group" class="others" style="width:348px">
+            <option>            </option>
+            <option>A Positive</option>
+            <option>A Negative</option>            
+            <option>B Positive</option>
+            <option>B Negative</option>            
+            <option>AB Positive</option>
+            <option>AB Negative</option>            
+            <option>O Positive</option>
+            <option>O Negative</option>           
+            <option>Unknown</option>
+    </select><br/><br/>
+    <input type="text" class="others" name="guardian_name" placeholder="    Guardian Name">
+    <input type="text" class="others" style="width:345px" name="guardian_relation" placeholder="    Relationship With Guardian "><br/><br/>
+    <textarea  name="guardian_address" class="mytextarea" rows ="3" placeholder="   Guardian Address"></textarea><br/><br/>
+    <input type="text" class="mytextbox" name="guardian_ph" placeholder="   Guardian Phone Number"><br/><br/>
+    <input type="text" class="mytextbox" name="email" placeholder="   Guardian Email Id"><br/><br/>
+    Is there any medical information related to the student, that you would like the school to be aware of?
+    Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>   
+    <br/><button type="button" class="btn btn-secondary" style="width:800px" name="save" value="Save">Save</button>
+    <br/><br/><br/><br/>
+</form>
+<br/><br/>
+</div>
+</center>
+<script>
+function test()
+{
+  //alert("something");
+  var applying_for = document.getElementById('applying_for').value;
+  if(applying_for == "other")
+  {
+    $( document ).ready(function() {
+      // Handler for .ready() called.
+      $('#std').show();
+      $('#br1').show();
+      $('#br2').show();
+    });
+  }
+  else
+  {
+    $( document ).ready(function() {
+      $('#std').hide();
+      $('#br1').hide();
+      $('#br2').hide();
+    });
+  }
+}
+
+function adrs(){
+   
+    document.getElementById('caddress').value=  document.getElementById('paddress').value
+}
+
+</script>
+</body>
+</html>
