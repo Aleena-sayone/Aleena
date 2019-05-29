@@ -1,0 +1,31 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+ <note>
+    <title>Note on XML</title>
+    <content>
+    <def>
+    <mainhead>Definition of XML :</mainhead>
+       <definition>XML is a software- and hardware-independent tool for storing and transporting data.</definition>
+       <usehead>Uses Of XML : </usehead>
+    </def>
+       <uses>
+        <use>Web publishing: </use>
+            <description>XML allows you to create interactive pages, allows the customer to customize those pages, and makes creating e-commerce applications more intuitive.
+             With XML, you store the data once and then render that content for different viewers or devices based on style sheet processing using an Extensible Style Language (XSL)/XSL Transformation (XSLT) processor.</description>
+        <use>Web searching and automating Web tasks</use>
+            <description>XML defines the type of information contained in a document, making it easier to return useful results when searching the Web:
+            For example, using HTML to search for books authored by Tom Brown is likely to return instances of the term 'brown' outside of the context of author.
+            Using XML restricts the search to the correct context (for example, the information contained in the "author" tag) and returns only the information that you want. 
+            By using XML, Web agents and robots (programs that automate Web searches or other tasks) are more efficient and produce more useful results.</description>
+        <use>General applications:</use>
+            <description>XML provides a standard method to access information, making it easier for applications and devices of all kinds to use, store, transmit, and display data.</description>
+        <use>e-business applications:  </use>
+            <description>XML implementations make electronic data interchange (EDI) more accessible for information interchange, business-to-business transactions, and business-to-consumer transactions.</description>
+        <use>Metadata applications: </use>
+            <description>XML makes it easier to express metadata in a portable, reusable format.</description>
+        <use>Pervasive computing: </use>
+            <description>XML provides portable and structured information types for display on pervasive (wireless) computing devices such as personal digital assistants (PDAs),
+             cellular phones, and others. For example, WML (Wireless Markup Language) and VoiceXML are currently evolving standards for describing visual and speech-driven wireless device interfaces.</description>
+       </uses>
+       </content>
+</note>
+
