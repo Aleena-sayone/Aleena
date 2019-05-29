@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 2</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <style>
+            .mytextbox{
+                
+                padding: 0;
+                height: 30px;
+                width: 800px;
+                position: relative;
+                left: 0;
+                outline: none;
+                border: 1px solid #cdcdcd;
+                border-color: rgba(0, 0, 0, .15);
+                background-color: white;
+                font-size: 16px;            
+            }
+        </style>
+    </head>
+    <body> 
+                          
+                    <b>User Data</b>
+                    <div id="data"></div>                               
+            
+        
+
+        <script>
+            $(document).ready(function(){              
+               // $("#data").load('https://jsonplaceholder.typicode.com/posts');
+               const url = 'https://jsonplaceholder.typicode.com/posts';
+               $.getJSON(url, function (data) {
+                    $.each(data, function (key, entry) {
+                        $('div').append('<p>'+'UserId   :'+entry.userId+'<br/>'+'id :'+entry.id+'<br/>'+' Title'+'    '+entry.title+'<br/>'+'Body:'+' '+entry.body+'</p>');  
+                                               })
+                        });
+
+            });
+         
+            </script>
+    </body>
+</html>
