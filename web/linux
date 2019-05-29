@@ -1,0 +1,25 @@
+adduser aleenav
+su aleenav
+pwd
+ls
+cd .. 
+ls
+cd aleenav
+mkdir aleenav
+chown www-data aleenav
+chgrp www-data aleenav
+chmod o+w aleenav
+cd aleenav 
+cat > aleenav.sh
+
+#!/bin/bash
+now=$(date +"%T")
+echo "Current time : $now"
+
+chmod u+x aleenav.sh
+chmod g-w aleenav.sh
+chmod o-w aleenav.sh
+touch /var/log/aleenv.log
+cp /var/log/aleenv.log /home/aleenav/aleenav/
+tar czvf aleenav.tar.gz /home/aleenav/aleenav
+cp /home/aleenav/aleenav/aleenav.tar.gz /home/aleena/
