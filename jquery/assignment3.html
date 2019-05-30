@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="container">
+  <div class="page-header">
+    <h1>JABONG
+      <div style="float: right; cursor: pointer;">
+        <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+      </div>
+    </h1>
+
+    <div class="w3-bar w3-white">
+        <a href="#" class="w3-bar-item w3-button">Home</a>
+        <a href="#" class="w3-bar-item w3-button">Men</a>
+        <a href="#" class="w3-bar-item w3-button">Kids</a>
+        <a href="#" class="w3-bar-item w3-button">Women</a>
+        <a href="#" class="w3-bar-item w3-button">Shoes</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="openForm()">signin</a>
+        
+      </div>
+  </div>
+  <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    <h2 style="float:center;">Latest Collections</h2><br/>
+  <div class="row">
+    <div class="col-md-6 text-center">
+
+        <div class="w3-content w3-display-container">
+            <img class="mySlides" src="5.jpg" width="100%" height="100%">
+            <img class="mySlides" src="3.jpg" width="100%" height="100%">
+            <img class="mySlides" src="4.jpg" width="100%" height="100%">          
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+          </div>
+          
+
+      
+      <br><br/>
+      <strong>Black colored casual wears</strong><br/>
+      This casual shirt, has aspread collar, long sleeves, curved hem, one patch pocket.
+      Long Sleeves with Slim Fit and Button Placketed item.   Material & Care: 100% cotton
+      Machine-wash<br/>
+      <strong>$10</strong>
+      <br>
+      <button class="btn btn-danger my-cart-btn"  style="width:350px;" style="width:350px;" data-id="1" data-name="Black colored casual wears" data-summary="summary 1" data-price="10" data-quantity="1" data-image="5.jpg">Add to Cart</button>
+      
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img src="2.jpg" width="100%" height="100%">
+      <br><br/>
+      <strong>White colored ladies top</strong><br/>
+      This casual shirt, has aspread collar, long sleeves, curved hem, one patch pocket.
+      Long Sleeves with Slim Fit and Button Placketed item.   Material & Care: 100% cotton
+      Machine-wash<br/>
+      <strong>$20</strong>
+      <br>
+      <button class="btn btn-danger my-cart-btn" style="width:350px;" data-id="2" data-name="White colored ladies top" data-summary="summary 2" data-price="20" data-quantity="1" data-image="2.jpg">Add to Cart</button>
+      
+    </div>
+  </div><br/><br/><br/>
+
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <img src="3.jpg" width="100%" height="100%">
+      <br><br/>
+      <strong>Blue checked casual shirt</strong><br/>
+      This casual shirt, has aspread collar, long sleeves, curved hem, one patch pocket.
+      Long Sleeves with Slim Fit and Button Placketed item.   Material & Care: 100% cotton
+      Machine-wash
+      <br/><strong>$30</strong>
+      <br>
+      <button class="btn btn-danger my-cart-btn" data-id="3" data-name="Blue checked casual shirt" data-summary="summary 3" data-price="30" data-quantity="1" data-image="3.jpg">Add to Cart</button>
+      
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img src="4.jpg" width="100%" height="100%">
+      <br><br/>
+      <strong>Black colored ladies top</strong><br/>
+      This casual shirt, has aspread collar, long sleeves, curved hem, one patch pocket.
+      Long Sleeves with Slim Fit and Button Placketed item.   Material & Care: 100% cotton
+      Machine-wash<br/>
+      <strong>$40</strong>
+      <br>
+      <button class="btn btn-danger my-cart-btn"  style="width:350px;"  data-id="4" data-name="Black colored ladies top" data-summary="summary 4" data-price="40" data-quantity="1" data-image="4.jpg">Add to Cart</button>
+      
+    </div>
+  </div>    
+     <br/><br/>   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="mycart-jquery.js"></script>
+</body>
+</html>
