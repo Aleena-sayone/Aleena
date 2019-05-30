@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <style>
+            .mytextbox{
+                
+                padding: 0;
+                height: 30px;
+                width: 800px;
+                position: relative;
+                left: 0;
+                outline: none;
+                border: 1px solid #cdcdcd;
+                border-color: rgba(0, 0, 0, .15);
+                background-color: white;
+                font-size: 16px;            
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <center><br/><br/><br/>
+                <form action="" method="POST" style="border:gray;border-style:solid;width:70%;">
+                    <br/><h2>User Registration:</h2><br/>
+                    <input type="text" class ="mytextbox" id="name" placeholder="    Name " required><br/><br/>
+                    <input type="email" class ="mytextbox" id="email" placeholder="    Email id " required><br/><br/>
+                    <input type="number" min="0" max="9" class ="mytextbox" id="phone" placeholder="    Phone No " ><br/><br/>
+                    <input type="date" class ="mytextbox" id="dob" placeholder="    Date Of Birth " ><br/><br/>
+                    <input type="number" class ="mytextbox" id="age" placeholder="    Age " disabled><br/><br/>
+                    <select class="mytextbox" id="country"></select><br/><br/>
+                    <br/><button type="button" class="btn btn-secondary" style="width:800px" id="save" value="Save">Save</button><br/><br/><br/>                    
+                </form>
+            </center>
+        </div>
+<script>
+    $(document).ready(function(){ 
+    
+        let dropdown = $('#country');
+
+dropdown.empty();
+
+dropdown.append('<option selected="true" disabled>Choose Country</option>');
+dropdown.prop('selectedIndex', 0);
+
+//const url = 'https://api.myjson.com/bins/7xq2x';
+//const url = 'http://services.groupkt.com/country/get/all';
+const url = 'countries.json';
+
+// Populate dropdown with list of provinces
+$.getJSON(url, function (data) {
+  $.each(data, function (key, entry) {
+      
+    dropdown.append($('<option></option>').attr('value', entry.name).text(entry.name));     
+  })
+  //$('#country option:selected').val()=    ;
+  //alert($("#country").val());  
+  
+});
+        $('#dob').change(function(){            
+        dob = new Date($('#dob').val());
+        var today = new Date();
+        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+        $('#age').val(age);          
+    });
+    $('#email').change(function(){
+        regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        email = $(this).val();
+        if(!regex.test(email)){
+            alert('invalid email id!')
+        }
+    });
+    $('#phone').change(function(e){
+        phone = $(this).val();
+        phone = phone.replace(/[^0-9]/g,'');
+        if (phone.length != 10)
+        {
+            alert('Phone number must be 10 digits.');
+            $('#phone').val('');
+            $('#phone').focus();            
+        }
+    });
+    $('#save').click(function(e){
+        if(($('#name').val()=='')||($('#email').val()=='')||($('#phone').val()=='')||($('#age').val()=='')||($('#dob').val()=='')){
+            alert("please fill all the fields !");
+        }else if(($( "#country option:selected" ).text()=='')||($( "#country option:selected" ).text()=='Choose Country')){
+            alert("please fill your Country !");
+        }
+        else{
+            alert("Success....!");
+        }
+    });
+
+    });
+</script>    
+    
+    </body>
+</html>
