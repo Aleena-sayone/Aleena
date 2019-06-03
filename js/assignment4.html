@@ -1,0 +1,31 @@
+<div style='text-align:center;'>
+	<script type= "text/javascript" src = "countries.js"></script>
+	<br/><br/><br/>
+	Select Country:   <select id="country" name ="country"></select>
+</div>
+
+<script language="javascript">
+	populateCountries("country"); // first parameter is id of country drop-down and second parameter is id of state drop-down	
+
+
+
+
+function populateCountries(countryElementId){
+	// given the id of the <select> tag as function argument, it inserts <option> tags
+	var countryElement = document.getElementById(countryElementId);
+	countryElement.length=0;
+	countryElement.options[0] = new Option('Select Country','-1');
+	countryElement.selectedIndex = 0;
+	for (var i=0; i<country_arr.length; i++) {
+		countryElement.options[countryElement.length] = new Option(country_arr[i],country_arr[i]);
+	}
+
+	// Assigned all countries. Now assign event listener for the states.
+
+	if( stateElementId ){
+		countryElement.onchange = function(){
+		
+		};
+	}
+}
+</script>
