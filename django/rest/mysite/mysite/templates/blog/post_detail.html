@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+<br/><br/>
+{% block content %}
+    
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ object.author }}</a>
+              <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+              {% if object.author == user %}
+              <a class="btn btn-secondary btn-sm sm-1 mb-1" href="{% url 'blog:blog_update' object.id %}">Update</a>
+              <a class="btn btn-danger btn-sm sm-1 mb-1" href="{% url 'blog:blog_delete' object.id %}">Delete</a>
+              {% endif %}
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.content }}</p>
+          </div>
+          <strong id="like_count">Likes {{ object.likes.all.count }}</strong>
+          {% if request.user != object.author %}
+          
+             
+            {% if request.user.is_authenticated %} 
+            {% if request.user not in object.likes.all %}
+            <form type="submit" method="POST" action ="{% url 'blog:like_post' %}">
+                {% csrf_token %}  
+            <button type="submit" name="post_id" value="{{ object.id }}" class="btn btn-danger">Like</button>
+            </form>
+            {%else%}
+            <form type="submit" method="POST" action ="{% url 'blog:like_post' %}">
+                {% csrf_token %}  
+            <button type="submit" name="post_id" value="{{ object.id }}" class="btn btn-danger">DisLike</button>
+            </form>
+            {%endif%}
+            {%endif%}
+            {%endif%}
+        </article>
+        
+{% endblock content %}

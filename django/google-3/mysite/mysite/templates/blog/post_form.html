@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br/><br/>
+<div class="content-section">
+    <form method = "POST" id="new_post_form">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Blog Post</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Post</button>
+        </div>
+    </form>    
+</div>
+<br/><br/>
+
+<script type="text/javascript">
+    $(Document).on('submit','#new_post_form', function(e){
+        e.preventDefault();
+        
+        $.ajax({
+            type : 'POST',
+            url : '/blogs/new/',
+            data : {
+                title: $('#title').val(),
+                content: $('#content').val(),
+                date_posted : $('#date_posted').val(),
+                author : $('#author').val(),
+            },
+            success:function(){
+                alert('created new post');
+            }
+        });
+    });
+    </script>
+{% endblock %}
+{% crispy form %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br/><br/>
+<div class="content-section">        
+   <center>
+         {% if user.is_authenticated %}
+         <h1>welcome {{ user.username }}</h1>
+         <small>This is your home page</small>
+         {% else %} 
+         <h1>welcome to mysite</h1>
+         {% endif %}
+   </center> 
+   <!--<img src="1.jpg" />-->
+</div>
+{% endblock %}
